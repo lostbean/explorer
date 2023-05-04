@@ -205,6 +205,7 @@ defmodule Explorer.Backend.Series do
   @callback trim(s) :: s
   @callback trim_leading(s) :: s
   @callback trim_trailing(s) :: s
+  @callback length(s) :: s
 
   # Date / DateTime
 

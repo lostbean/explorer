@@ -512,6 +512,10 @@ defmodule Explorer.PolarsBackend.Series do
   def trim_trailing(series),
     do: Shared.apply_series(series, :s_trim_trailing)
 
+  @impl true
+  def length(series),
+    do: Shared.apply_series(series, :s_length)
+
   # Float round
   @impl true
   def round(series, decimals),

@@ -104,6 +104,7 @@ defmodule Explorer.PolarsBackend.Expression do
     trim: 1,
     trim_leading: 1,
     trim_trailing: 1,
+    length: 1,
     downcase: 1,
     upcase: 1
   ]

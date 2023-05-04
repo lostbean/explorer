@@ -220,6 +220,7 @@ rustler::init!(
         expr_trim,
         expr_trim_leading,
         expr_trim_trailing,
+        expr_length,
         // float round expressions
         expr_round,
         expr_floor,
@@ -340,6 +341,7 @@ rustler::init!(
         s_rename,
         s_reverse,
         s_trim_trailing,
+        s_length,
         s_sample_n,
         s_sample_frac,
         s_series_equal,

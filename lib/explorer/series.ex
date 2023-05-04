@@ -3708,6 +3708,25 @@ defmodule Explorer.Series do
 
   def trim_trailing(%Series{dtype: dtype}), do: dtype_error("trim_trailing/1", dtype, [:string])
 
+  @doc """
+  Returns the length of the string.
+
+  ## Examples
+
+      iex> s = Explorer.Series.from_list(["a", "bc", "def"])
+      iex> Explorer.Series.length(s)
+      #Explorer.Series<
+        Polars[3]
+        string [1, 2, 3]
+      >
+  """
+  @doc type: :string_wise
+  @spec length(Series.t()) :: Series.t()
+  def length(%Series{dtype: :string} = series),
+    do: apply_series(series, :length)
+
+  def length(%Series{dtype: dtype}), do: dtype_error("length/1", dtype, [:string])
+
   # Float
 
   @doc """

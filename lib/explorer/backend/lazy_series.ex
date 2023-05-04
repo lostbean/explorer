@@ -99,6 +99,7 @@ defmodule Explorer.Backend.LazySeries do
     contains: 2,
     trim_leading: 1,
     trim_trailing: 1,
+    length: 1,
     trim: 1,
     upcase: 1,
     downcase: 1,
@@ -755,6 +756,13 @@ defmodule Explorer.Backend.LazySeries do
   @impl true
   def trim_trailing(series) do
     data = new(:trim_trailing, [lazy_series!(series)])
+
+    Backend.Series.new(data, :string)
+  end
+  
+  @impl true
+  def length(series) do
+    data = new(:length, [lazy_series!(series)])
 
     Backend.Series.new(data, :string)
   end
